@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>First Haven</title>
+
+<style>
+:root{
+  --pink:#ff6f9f;
+  --soft:#ffd6e5;
+  --light:#fff3f7;
+  --white:#fff;
+  --text:#5d4050;
+  --muted:#987286;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:linear-gradient(#fff8fb,#ffe7f0);
+  color:var(--text);
+  font-family:Arial,sans-serif;
+  font-size:12px;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:white;
+  padding:10px 15px;
+  border-bottom:1px solid var(--soft);
+  color:var(--pink);
+  font-size:13px;
+  font-weight:bold;
+}
+
+main{
+  max-width:680px;
+  margin:auto;
+  padding:12px 10px 40px;
+}
+
+section{
+  background:white;
+  border:1px solid var(--soft);
+  border-radius:15px;
+  padding:12px;
+  margin-bottom:10px;
+  box-shadow:0 3px 10px #ff8fb325;
+}
+
+h3{
+  margin:0 0 8px;
+  color:var(--pink);
+  font-size:10px;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+/* INFORMACIÓN */
+
+.reputation{
+  margin-bottom:8px;
+}
+
+.reputation-title{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:3px;
+  color:var(--pink);
+  font-size:9px;
+  font-weight:bold;
+}
+
+.bar{
+  height:5px;
+  background:var(--soft);
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.bar span{
+  display:block;
+  height:100%;
+  background:var(--pink);
+  border-radius:10px;
+}
+
+.info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border:1px solid var(--soft);
+  border-radius:9px;
+  overflow:hidden;
+}
+
+.info div{
+  padding:6px 8px;
+  border-bottom:1px solid var(--soft);
+}
+
+.info div:nth-child(odd){
+  border-right:1px solid var(--soft);
+}
+
+.info b{
+  display:block;
+  margin-bottom:2px;
+  color:var(--pink);
+  font-size:7px;
+  letter-spacing:.6px;
+}
+
+.info span{
+  font-size:10px;
+}
+
+/* DATOS + PERSONALIDAD */
+
+.double{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.box{
+  background:var(--light);
+  border-radius:10px;
+  padding:9px;
+}
+
+.box h3{
+  margin-bottom:6px;
+}
+
+.fact{
+  margin:5px 0;
+  font-size:9px;
+  line-height:1.3;
+}
+
+/* PERSONALIDAD */
+
+.trait{
+  margin:7px 0;
+}
+
+.trait-name{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:3px;
+  font-size:9px;
+}
+
+/* RELACIONES */
+
+.relationship{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:6px 0;
+  border-bottom:1px solid var(--soft);
+}
+
+.relationship:last-child{
+  border-bottom:0;
+}
+
+.relationship-name{
+  color:var(--pink);
+  font-size:10px;
+  font-weight:bold;
+}
+
+.relation-tag{
+  padding:2px 7px;
+  border:1px solid var(--pink);
+  border-radius:10px;
+  color:var(--pink);
+  font-size:7px;
+  white-space:nowrap;
+}
+
+/* MÓVIL */
+
+@media(max-width:430px){
+
+  .double{
+    grid-template-columns:1fr;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  𖹭 FIRST HAVEN
+</header>
+
+<main>
+
+  <!-- INFORMACIÓN BÁSICA -->
+
+  <section>
+
+    <h3>Información básica</h3>
+
+    <div class="reputation">
+
+      <div class="reputation-title">
+        <span>REPUTATION</span>
+        <span>80%</span>
+      </div>
+
+      <div class="bar">
+        <span style="width:80%"></span>
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <div>
+        <b>EDAD</b>
+        <span>21 años</span>
+      </div>
+
+      <div>
+        <b>CUMPLEAÑOS</b>
+        <span>XX / XX</span>
+      </div>
+
+      <div>
+        <b>ALTURA</b>
+        <span>186 cm</span>
+      </div>
+
+      <div>
+        <b>OCUPACIÓN</b>
+        <span>Estudiante</span>
+      </div>
+
+      <div>
+        <b>CARRERA</b>
+        <span>Derecho</span>
+      </div>
+
+      <div>
+        <b>PASATIEMPO</b>
+        <span>Escribir</span>
+      </div>
+
+      <div>
+        <b>ROL</b>
+        <span>Interés amoroso principal</span>
+      </div>
+
+      <div>
+        <b>CRUSH</b>
+        <span>{{user}}</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DATOS IMPORTANTES + PERSONALIDAD -->
+
+  <section>
+
+    <div class="double">
+
+      <div class="box">
+
+        <h3>Datos importantes</h3>
+
+        <p class="fact">𖹭 Proviene de una familia reconocida.</p>
+
+        <p class="fact">𖹭 Llegó a First Haven después de un acontecimiento importante.</p>
+
+        <p class="fact">𖹭 Mantiene una parte de su pasado en secreto.</p>
+
+      </div>
+
+
+      <div class="box">
+
+        <h3>Personality</h3>
+
+        <div class="trait">
+          <div class="trait-name">
+            <span>Sanidad</span>
+            <span>70%</span>
+          </div>
+
+          <div class="bar">
+            <span style="width:70%"></span>
+          </div>
+        </div>
+
+        <div class="trait">
+          <div class="trait-name">
+            <span>Obsesión</span>
+            <span>40%</span>
+          </div>
+
+          <div class="bar">
+            <span style="width:40%"></span>
+          </div>
+        </div>
+
+        <div class="trait">
+          <div class="trait-name">
+            <span>Empatía</span>
+            <span>60%</span>
+          </div>
+
+          <div class="bar">
+            <span style="width:60%"></span>
+          </div>
+        </div>
+
+        <div class="trait">
+          <div class="trait-name">
+            <span>Control</span>
+            <span>80%</span>
+          </div>
+
+          <div class="bar">
+            <span style="width:80%"></span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- RELACIONES -->
+
+  <section>
+
+    <h3>Relaciones</h3>
+
+    <div class="relationship">
+      <span class="relationship-name">𖹭 {{user}}</span>
+      <span class="relation-tag">CRUSH</span>
+    </div>
+
+    <div class="relationship">
+      <span class="relationship-name">𖹭 Nombre del personaje</span>
+      <span class="relation-tag">AMIGO</span>
+    </div>
+
+    <div class="relationship">
+      <span class="relationship-name">𖹭 Nombre del personaje</span>
+      <span class="relation-tag">FAMILIAR</span>
+    </div>
+
+    <div class="relationship">
+      <span class="relationship-name">𖹭 Nombre del personaje</span>
+      <span class="relation-tag">DESCONOCIDO</span>
+    </div>
+
+  </section>
+
+</main>
+
+</body>
+        </html>
